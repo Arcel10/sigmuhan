@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1c2a;
+        }
+        :root{
+            --main-color: #ff702a;
+            --text-color: #000000;
+            --bg-color: #1e1c2a;
+            --big-font: 5rem;
+            --h2-font: 2.25rem;
+            --p-font: 0.9rem;
+        }
+        
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: #feeee7;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px -100px;
+            background: var(--bg-color);
+        }
+        h2 {
+            text-align: center;
+        }
+        input[type="text"], input[type="email"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        .logo{
+            color: var(--main-color);
+            font-weight: 600;
+            font-size: 2.4rem;
+            position: right;
+            text-decoration: none; /* Remove underline */
+        }
+        header .navbar{
+            position: absolute;
+            top: -400px;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            background: #2b2640;
+            transition: 3s;
+        }
+        .logo img {
+            height: 100px; /* Adjust height as needed */
+            width: 50px;
+        }    
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Korean Foods</a>
+    </header>
+</body>
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Food Order Form</title>
+    <style>
+        /* Add your CSS styling here for better presentation */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="time"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="number"] {
+            width: 60px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .order-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Advance Food Order Form</h1>
+
+        <!-- Order Form -->
+        <form action="process_advance_order.php" method="POST">
+            <!-- Customer Details -->
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" required>
+            </div>
+            <div>
+            </div>
+
+            <!-- Delivery Date and Time -->
+            <div>
+                <h2>Delivery Date and Time:</h2>
+                <label for="delivery_date">Delivery Date:</label>
+                <input type="date" id="delivery_date" name="delivery_date" required>
+
+                <label for="delivery_time">Delivery Time:</label>
+                <input type="time" id="delivery_time" name="delivery_time" required>
+            </div>
+
+            <!-- Menu Items Selection -->
+            <div>
+                <h2>Menu Items:</h2>
+                <div class="order-item">
+                    <label for="item1">Samg Package 1</label>
+                    <input type="hidden" name="item_id[]" value="Samg Package 1">
+                    <input type="hidden" name="item_name[]" value="Samg Package 1">
+                    <input type="hidden" name="item_price[]" value="299">
+                    <label for="quantity1">Quantity:</label>
+                    <input type="number" id="quantity1" name="quantity[]" value="1" min="1" required>
+                </div>
+				<div class="order-item">
+                    <label for="item1">Samg Package 2</label>
+                    <input type="hidden" name="item_id[]" value="Samg Package 2">
+                    <input type="hidden" name="item_name[]" value="Samg Package 2">
+                    <input type="hidden" name="item_price[]" value="299">
+                    <label for="quantity1">Quantity:</label>
+                    <input type="number" id="quantity1" name="quantity[]" value="1" min="1" required>
+                </div>
+				<div class="order-item">
+                    <label for="item1">Samg Package 3</label>
+                    <input type="hidden" name="item_id[]" value="Samg Package 3">
+                    <input type="hidden" name="item_name[]" value="Samg Package 3">
+                    <input type="hidden" name="item_price[]" value="299">
+                    <label for="quantity1">Quantity:</label>
+                    <input type="number" id="quantity1" name="quantity[]" value="1" min="1" required>
+                </div>
+                <div class="order-item">
+                    <label for="item2">Ramen 1</label>
+                    <input type="hidden" name="item_id[]" value="Ramen 1">
+                    <input type="hidden" name="item_name[]" value="Ramen 1">
+                    <input type="hidden" name="item_price[]" value="99">
+                    <label for="quantity2">Quantity:</label>
+                    <input type="number" id="quantity2" name="quantity[]" value="1" min="1" required>
+                </div>
+				<div class="order-item">
+                    <label for="item2">Ramen 2</label>
+                    <input type="hidden" name="item_id[]" value="Ramen 2">
+                    <input type="hidden" name="item_name[]" value="Ramen 2">
+                    <input type="hidden" name="item_price[]" value="99">
+                    <label for="quantity2">Quantity:</label>
+                    <input type="number" id="quantity2" name="quantity[]" value="1" min="1" required>
+                </div>
+				<div class="order-item">
+                    <label for="item2">Ramen 3</label>
+                    <input type="hidden" name="item_id[]" value="Ramen 3">
+                    <input type="hidden" name="item_name[]" value="Ramen 3">
+                    <input type="hidden" name="item_price[]" value="99">
+                    <label for="quantity2">Quantity:</label>
+                    <input type="number" id="quantity2" name="quantity[]" value="1" min="1" required>
+                </div>
+				<div class="order-item">
+                    <label for="item2">Sushi 1</label>
+                    <input type="hidden" name="item_id[]" value="Sushi 1">
+                    <input type="hidden" name="item_name[]" value="Sushi 1">
+                    <input type="hidden" name="item_price[]" value="149">
+                    <label for="quantity2">Quantity:</label>
+                    <input type="number" id="quantity2" name="quantity[]" value="1" min="1" required>
+                </div>
+				<div class="order-item">
+                    <label for="item2">Sushi 2</label>
+                    <input type="hidden" name="item_id[]" value="Sushi 2">
+                    <input type="hidden" name="item_name[]" value="Sushi 2">
+                    <input type="hidden" name="item_price[]" value="149">
+                    <label for="quantity2">Quantity:</label>
+                    <input type="number" id="quantity2" name="quantity[]" value="1" min="1" required>
+                </div>
+				<div class="order-item">
+                    <label for="item2">Sushi 3</label>
+                    <input type="hidden" name="item_id[]" value="Sushi 3">
+                    <input type="hidden" name="item_name[]" value="Sushi 3">
+                    <input type="hidden" name="item_price[]" value="149">
+                    <label for="quantity2">Quantity:</label>
+                    <input type="number" id="quantity2" name="quantity[]" value="1" min="1" required>
+                </div>
+                <!-- Add more menu items as needed -->
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Place Advance Order</button>
+        </form>
+    </div>
+</body>
+
+</html>
